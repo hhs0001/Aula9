@@ -1,0 +1,2 @@
+[PROD]
+DB_URI = mongodb+srv://<username>:<password>@sandbox.abcd.mongodb.net/sample_mflix
