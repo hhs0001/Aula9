@@ -1,6 +1,6 @@
 # BookList
 
-App sinmples desenvolvido como requisitado na aula9
+App simples desenvolvido como requisitado na aula9 da diciplina de Programação Avançada da FACAMP
 
 ## Requisitos
 
