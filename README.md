@@ -1,6 +1,6 @@
-# TaskZen
+# BookList
 
-TaskZen é uma aplicação web simples de lista de tarefas (TODO) desenvolvida como projeto da faculdade. A aplicação consiste em um frontend Vue.js e um backend Flask que se comunicam via Web Services (WS). Os dados são armazenados em um banco de dados NoSQL MongoDB.
+App sinmples desenvolvido como requisitado na aula9
 
 ## Requisitos
 
@@ -13,8 +13,8 @@ TaskZen é uma aplicação web simples de lista de tarefas (TODO) desenvolvida c
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu_usuario/taskzen.git
-cd taskzen
+git clone https://github.com/hhs0001/Aula9.git
+cd Aula9
 ```
 
 
@@ -51,14 +51,14 @@ npm install
 1. Inicie o servidor backend:
 
 ```bash
-cd taskzen
+cd Aula9
 python wsgi.py
 ```
 
 2. Inicie o servidor frontend:
 
 ```bash
-cd frontend
+cd ./Aula9/frontend
 npm run dev
 ```
 
