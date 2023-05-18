@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from bson.objectid import ObjectId
-from settings import books_collection
+from settings import book_collection
 
 books_blueprint = Blueprint('books', __name__)
 
@@ -8,7 +8,7 @@ books_blueprint = Blueprint('books', __name__)
 @books_blueprint.route('/books', methods=['POST'])
 def create_book():
     book = request.get_json()
-    result = books_collection.insert_one(book)
+    result = book_collection.insert_one(book)
     book['_id'] = str(result.inserted_id)
     return jsonify(book), 201
 
@@ -16,7 +16,7 @@ def create_book():
 @books_blueprint.route('/books', methods=['GET'])
 def get_books():
     books = []
-    for book in books_collection.find():  # filtrando os livros
+    for book in book_collection.find():  # filtrando os livros
         book['_id'] = str(book['_id'])
         books.append(book)
     return jsonify(books), 200
@@ -26,11 +26,11 @@ def get_books():
 def update_book(book_id):
     updated_book = request.get_json()
     updated_book.pop('_id', None)  # Remove o campo '_id' se estiver presente
-    books_collection.update_one({'_id': ObjectId(book_id)}, {'$set': updated_book})
+    book_collection.update_one({'_id': ObjectId(book_id)}, {'$set': updated_book})
     return jsonify(updated_book), 200
 
 # Remover um livro (D)
 @books_blueprint.route('/books/<book_id>', methods=['DELETE'])
 def delete_book(book_id):
-    books_collection.delete_one({'_id': ObjectId(book_id)})
+    book_collection.delete_one({'_id': ObjectId(book_id)})
     return jsonify({'result': 'Book deleted'}), 200
